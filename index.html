@@ -6,6 +6,22 @@
     <title>Prueba PHP Miguel</title>
 </head>
 <body>
+
+    <h1>Hola, mundo!</h1>
+    <p>Esta es una prueba de PHP.</p>
+    <?php
+        echo "<p>Hola desde PHP!</p>";
+    ?>
+    <form action="index.php" method="post">
+        <input type="text" name="nombre" placeholder="Escribe tu nombre">
+        <input type="submit" value="Enviar">
+    </form>
+    <?php
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $nombre = htmlspecialchars($_POST['nombre']);
+            echo "<p>Hola, $nombre!</p>";
+        }
+    ?>
     
 </body>
 </html>
